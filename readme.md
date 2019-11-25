@@ -3,7 +3,6 @@
 ## Install Dependencies
 ```
 composer install
-npm install
 ```
 
 ## Generate Key
