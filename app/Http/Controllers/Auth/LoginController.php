@@ -25,7 +25,19 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+
+    public function redirectTo()
+    {
+        return '/';
+    }
+
+    /**
+     * Overrides the username
+     * 
+     * @var string
+     */
+    protected $username = 'username';
 
     /**
      * Create a new controller instance.
@@ -35,5 +47,13 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Overrides the method to get username
+     */
+    public function username()
+    {
+        return 'username';
     }
 }
