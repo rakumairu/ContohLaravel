@@ -34,6 +34,7 @@
             <div class="card-body">
               <div class="col-sm-4 form-group">
                 <button type="button" data-toggle="modal" data-target="#modal-add" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Add</button>
+                {{-- Untuk reload tabel --}}
                 <button type="button" onclick="reload_table()" class="btn btn-default btn-sm"><i class="fas fa-sync"></i> Reload</button>
               </div>
               <table id="table_format" class="table table-bordered table-striped table-datas" width="100%">
@@ -72,6 +73,7 @@
         </div>
         <div class="modal-body">
           <form role="form" id="form_add">
+            {{-- Jadi di laravel ada namanya csrf token, itu dipake untuk kemanan method yang pake POST --}}
             {{ csrf_field() }}
             <div class="card-body">
               <div class="form-group">
@@ -161,8 +163,8 @@
     // Id tabel
     var table_format;
 
-    // Initial load datatable
     $(document).ready(function() {
+      // Inisialisasi tabel
       table_format = $('#table_format').DataTable({ 
         
         "processing": true, 
