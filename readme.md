@@ -5,6 +5,9 @@
 composer install
 ```
 
+## Copy .env.example
+Copy .env.example to .env
+
 ## Generate Key
 ```
 php artisan key:generate 
